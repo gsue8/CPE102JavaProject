@@ -55,7 +55,7 @@ public class WorldView
    
    private void drawPath()
    {
-	   Point p = new Point(screen.mouseX/tileWidth, screen.mouseY/tileHeight);
+	   Point p = viewportToWorld(viewport, screen.mouseX/tileWidth, screen.mouseY/tileHeight);
 	   if(world.isOccupied(p))
 	   {
 		   if(world.getTileOccupant(p) instanceof Miner)
@@ -98,6 +98,7 @@ public class WorldView
          world.getNumRows() - viewport.getNumRows());
       viewport.shift(new_y, new_x);
    }
+   
 
    private static int clamp(int v, int min, int max)
    {

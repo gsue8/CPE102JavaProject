@@ -30,6 +30,8 @@ public class Main extends PApplet
    private long next_time;
    private WorldModel world;
    private WorldView view;
+   private int x;
+   private int y;
 
 
    public void setup()
@@ -62,6 +64,7 @@ public class Main extends PApplet
       next_time = System.currentTimeMillis() + TIMER_ACTION_DELAY;
    }
 
+	   
    public void draw()
    {
       long time = System.currentTimeMillis();
@@ -71,24 +74,10 @@ public class Main extends PApplet
          next_time = time + TIMER_ACTION_DELAY;
       }
 
-      /*Point p = new Point(mouseX/32, mouseY/32);
-	   if(world.isOccupied(p))
-	   {
-		   if(world.getTileOccupant(p) instanceof Miner)
-		   {
-			   Miner m = (Miner) world.getTileOccupant(p);
-			   for(Point pathpt : m.path)
-			   {
-				  // drawBackground();
-				   //drawEntities();
-				   rect((pathpt.x*32)+8, (pathpt.y*32)+8, 16, 16);
-			   }
-		   }
-	   }*/
       view.drawViewport();
-      
    }
 
+   
    public void keyPressed()
    {
       if (key == CODED)
@@ -111,6 +100,7 @@ public class Main extends PApplet
                break;
          }
          view.updateView(dx, dy);
+         
       }
    }
    

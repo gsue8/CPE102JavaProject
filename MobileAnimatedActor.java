@@ -47,7 +47,7 @@ public abstract class MobileAnimatedActor
 	    	 {
 	    		 return false;
 	    	 }
-	    	 System.out.println("occupied at:" +start.x+","+start.y);
+	    	 //System.out.println("occupied at:" +start.x+","+start.y);
 	      }
 	      for(int i = 0; i<visited.size(); i++)
 	      {
@@ -98,14 +98,15 @@ public abstract class MobileAnimatedActor
 	   System.out.println("visitedsize");
 	   //System.out.println(visited.size());
 	   Point pos = new Point(getPosition().x, getPosition().y);
-	   System.out.println("startpt:" + getPosition().x +","+ getPosition().y);
+	   
 	   System.out.println("endpt" + dest_pt.x +"," +dest_pt.y);
 	   System.out.println("visited:" + visited.size());*/
+	  //System.out.println("startpt:" + getPosition().x +","+ getPosition().y);
 	   dfs(getPosition(), dest_pt, world, path, visited);
 	   int i = path.size()-1;
 	   //System.out.println(i);
 	  System.out.println("pathsize:" + path.size());
-	  System.out.println("i:" + i);
+	 // System.out.println("i:" + i);
 	  if(path.size() == 0)
 	  {
 		  return getPosition();
@@ -117,6 +118,7 @@ public abstract class MobileAnimatedActor
 	  System.out.println("last-2:" + path.get(i-2).x +","+ path.get(i-2).y);
 	  System.out.println("last-3:" + path.get(i-3).x +","+ path.get(i-3).y);
 	  System.out.println("first" + path.get(0).x + "," + path.get(0).y);*/
+	  // Point new_pt = new Point(path.get(i-1).x, path.get(i-1).y);
 	   Point new_pt = new Point(path.get(i-1).x, path.get(i-1).y);
 	  // System.out.println("first step" +new_pt.x + "," + new_pt.y);
 	   return new_pt;
