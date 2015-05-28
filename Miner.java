@@ -9,8 +9,7 @@ public abstract class Miner
    private int resource_limit;
    private int resource_count;
    private Class<?> seeking;
-   //protected List<Point> path;
-   //protected List<Point> visited;
+
 
    public Miner(String name, Point position, int rate, int animation_rate,
       int resource_limit, int resource_count, Class<?> seeking,
@@ -20,8 +19,6 @@ public abstract class Miner
       this.resource_limit = resource_limit;
       this.resource_count = resource_count;
       this.seeking = seeking;
-     // this.path = new ArrayList();
-      //this.visited = new ArrayList();
    }
 
    public void setResourceCount(int count)

@@ -7,15 +7,11 @@ import java.util.List;
 public class MinerNotFull
    extends Miner
 {
-  // protected LinkedList<Point> pathy;
-   //protected List<Point> visitedy;
    public MinerNotFull(String name, Point position, int rate,
       int animation_rate, int resource_limit, List<PImage> imgs)
    {
       super(name, position, rate, animation_rate, resource_limit,
          0, Ore.class, imgs);
-      //this.pathy = new LinkedList();
-     // this.visitedy = new ArrayList();
    }
 
    public String toString()

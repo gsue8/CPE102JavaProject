@@ -7,14 +7,12 @@ import java.util.List;
 public class MinerFull
    extends Miner
 {
-	//protected List<Point> uh;
-	//protected List<Point> vuh;
+
    public MinerFull(String name, Point position, int rate,
       int animation_rate, int resource_limit, List<PImage> imgs)
    {
       super(name, position, rate, animation_rate, resource_limit,
          resource_limit, Blacksmith.class, imgs);
-     // this.uh = new ArrayList<Point>();
    }
 
    protected Miner transform(WorldModel world)
