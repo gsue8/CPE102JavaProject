@@ -108,7 +108,6 @@ public class Main extends PApplet
    {
 	   Background b = new Background("flower", imageStore.get("flower"));
 	   long time = System.currentTimeMillis();
-	   //view.worldEventBg(b);
 	   Point wyvern_pt = view.worldEventBg(b);
 	   Wyvern wyvern = new Wyvern("wyvern", wyvern_pt, 400, 100,
 			   imageStore.get("wyvern"));

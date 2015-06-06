@@ -43,8 +43,7 @@ public class Creature
 	         removePendingAction(action[0]);
 
 	         WorldEntity target = world.findNearest(getPosition(), MinerNotFull.class);
-	         //long nextTime = ticks + getRate();
-	         long nextTime = ticks+100;
+	         long nextTime = ticks + getRate();
 	      if(target != null)
 	      {  
 	    	  Point tpt = target.getPosition();
@@ -52,7 +51,7 @@ public class Creature
 	         {
 	        	 Quake quake = createQuake(world, tpt, ticks, imageStore);
 	        	 world.addEntity(quake);
-	        	 nextTime = nextTime + 100;
+	        	 nextTime = nextTime + getRate();
 	        	 
 	         }
 	         scheduleAction(world, this, createAction(world, imageStore),

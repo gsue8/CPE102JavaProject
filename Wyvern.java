@@ -44,7 +44,7 @@ public class Wyvern
 	         removePendingAction(action[0]);
 
 	         WorldEntity target = world.findNearest(getPosition(), Creature.class);
-	         long nextTime = ticks + 200;
+	         long nextTime = ticks + getRate();
 	         
 	        //
 	         if(target != null)
@@ -54,7 +54,7 @@ public class Wyvern
 	        	 {
 	        		 Flare flare = createFlare(world, tpt, ticks, imageStore);
 	        		 world.addEntity(flare);
-	        		 nextTime = nextTime + 50;
+	        		 nextTime = nextTime + getRate();
 	        	 }
 	         }
 	         scheduleAction(world, this, createAction(world, imageStore),
