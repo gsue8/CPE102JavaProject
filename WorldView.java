@@ -23,7 +23,7 @@ public class WorldView
    {
       drawBackground();
       drawEntities();
-      drawPath();
+     // drawPath();
    }
 
    private void drawBackground()
@@ -53,7 +53,7 @@ public class WorldView
       }
    }
    
-   private void drawPath()
+  /* private void drawPath()
    {
 	   Point p = viewportToWorld(viewport, screen.mouseX/tileWidth, screen.mouseY/tileHeight);
 	   if(world.isOccupied(p))
@@ -88,8 +88,22 @@ public class WorldView
 			   }
 		   }
 	   }
-   }
+   }*/
 
+   public Point worldEventBg(Background b)
+   {
+	   Point mouse = viewportToWorld(viewport, 
+			   screen.mouseX/tileWidth, screen.mouseY/tileHeight);
+	   for(int i = 0; i < 5; i++)
+	   {
+		   for(int j = 0; j < 5; j++)
+		   {
+			   world.setBackground(new Point(mouse.x-2+i, mouse.y-2+j), b);
+		   }
+	   }   
+	   return mouse;
+   }
+   
    public void updateView(int dx, int dy)
    {
       int new_x = clamp(viewport.getCol() + dx, 0,

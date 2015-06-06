@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.File;
 
-public class Main extends PApplet
+public class Main extends PApplet 
 {
    private static final int WORLD_WIDTH_SCALE = 2;
    private static final int WORLD_HEIGHT_SCALE = 2;
@@ -32,7 +32,7 @@ public class Main extends PApplet
    private WorldView view;
    private int x;
    private int y;
-
+   
 
    public void setup()
    {
@@ -104,6 +104,25 @@ public class Main extends PApplet
       }
    }
    
+   public void mouseClicked() 
+   {
+	   Background b = new Background("flower", imageStore.get("flower"));
+	   long time = System.currentTimeMillis();
+	   //view.worldEventBg(b);
+	   Point wyvern_pt = view.worldEventBg(b);
+	   Wyvern wyvern = new Wyvern("wyvern", wyvern_pt, 400, 100,
+			   imageStore.get("wyvern"));
+	   wyvern.schedule(world, time+100, imageStore);
+	   world.addEntity(wyvern);
+	   for(WorldEntity e : world.getEntities())
+	   {
+		   if(e instanceof OreBlob)
+		   {
+			   Point newpt = e.getPosition();
+			   world.scheduleAction(world.createAction(world, newpt, imageStore), time+1);
+		   }
+	   }
+   }
    
 
    private static Background createDefaultBackground(ImageStore imageStore)

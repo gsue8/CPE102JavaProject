@@ -1,10 +1,12 @@
 import processing.core.PImage;
+
 import java.util.List;
 
 public class OreBlob
    extends MobileAnimatedActor
 {
    private static final int QUAKE_ANIMATION_RATE = 100;
+   
    public OreBlob(String name, Point position, int rate, int animation_rate,
       List<PImage> imgs)
    {
@@ -30,7 +32,8 @@ public class OreBlob
       }
       else
       {
-         Point new_pt = nextPosition(world, target.getPosition(), path, visited);
+         //Point new_pt = nextPosition(world, target.getPosition(), path, visited);
+    	 Point new_pt = nextPosition(world, target.getPosition());
          WorldEntity old_entity = world.getTileOccupant(new_pt);
          if (old_entity != null && old_entity != this)
          {
@@ -69,6 +72,8 @@ public class OreBlob
       return action[0];
    }
 
+
+   
    private Quake createQuake(WorldModel world, Point pt, long ticks,
       ImageStore imageStore)
    {

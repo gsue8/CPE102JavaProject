@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.LinkedList;
 
-public class WorldModel
+public class WorldModel 
 {
    private Background[][] background;
    private WorldEntity[][] occupancy;
@@ -11,7 +11,7 @@ public class WorldModel
    private int numCols;
    private OrderedList<Action> actionQueue;
 
-   public WorldModel(int numRows, int numCols, Background background)
+   public WorldModel(int numRows, int numCols, Background background) 
    {
       this.background = new Background[numRows][numCols];
       this.occupancy = new WorldEntity[numRows][numCols];
@@ -185,5 +185,19 @@ public class WorldModel
    private static <T> void setCell(T[][] grid, Point pt, T v)
    {
       grid[pt.y][pt.x] = v;
+   }
+ 
+   public Action createAction(WorldModel world, Point p, ImageStore imageStore)
+   {
+      Action[] action = { null };
+      action[0] = ticks -> {
+         unscheduleAction(action[0]);
+         long time = System.currentTimeMillis();
+        Creature c = new Creature("creature", p, 500, 100,
+        				 imageStore.get("wolf"));
+        		 c.schedule(world, time+100, imageStore);
+        		 world.addEntity(c);
+      };
+      return action[0];
    }
 }

@@ -1,0 +1,8 @@
+World Event:
+
+To trigger the event, simply click the left mouse button.
+This will cause a 5x5 meadow of flowers to appear around the mouse pointer's position.
+A wyvern (the new entity) will appear in the center of this meadow where the mouse pointer is.
+Any Ore Blobs that exist in the world will be transformed into wolves (Creature).
+The wolves will chase after any MinerNotFull entities and trigger a quake animation.
+The wyvern will chase after any wolves and trigger a mini fire explosion animation (Flare).

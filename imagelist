@@ -11,6 +11,17 @@ blob images/blob9.bmp 255 255 255 0
 blob images/blob10.bmp 255 255 255 0
 blob images/blob11.bmp 255 255 255 0
 blob images/blob12.bmp 255 255 255 0
+flare images/fire1.bmp 255 255 255 0
+flare images/fire2.bmp 255 255 255 0
+flare images/fire3.bmp 255 255 255 0
+flare images/fire4.bmp 255 255 255 0
+flare images/fire5.bmp 255 255 255 0
+flare images/fire6.bmp 255 255 255 0
+flare images/fire7.bmp 255 255 255 0
+flare images/fire8.bmp 255 255 255 0
+flare images/fire9.bmp 255 255 255 0
+flare images/fire10.bmp 255 255 255 0
+flower images/flower.bmp
 grass images/grass.bmp
 miner images/miner1.bmp 252 252 252 0
 miner images/miner2.bmp 252 252 252 0
@@ -27,4 +38,18 @@ quake images/quake5.bmp 255 255 255 0
 quake images/quake6.bmp 255 255 255 0
 rocks images/rock.bmp
 vein images/vein.bmp
+wolf images/wolf1.bmp 255 255 255 255 0
+wolf images/wolf2.bmp 255 255 255 255 0
+wolf images/wolf3.bmp 255 255 255 255 0
+wolf images/wolf4.bmp 255 255 255 255 0
+wolf images/wolf5.bmp 255 255 255 255 0
+wolf images/wolf6.bmp 255 255 255 255 0
+wyvern images/wyvern1.bmp 255 255 255 0
+wyvern images/wyvern2.bmp 255 255 255 0
+wyvern images/wyvern3.bmp 255 255 255 0
+wyvern images/wyvern4.bmp 255 255 255 0
+wyvern images/wyvern5.bmp 255 255 255 0
+wyvern images/wyvern6.bmp 255 255 255 0
+wyvern images/wyvern7.bmp 255 255 255 0
+wyvern images/wyvern8.bmp 255 255 255 0
 background_default images/none.bmp

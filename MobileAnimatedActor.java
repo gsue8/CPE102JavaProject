@@ -8,36 +8,36 @@ import static java.lang.Math.abs;
 public abstract class MobileAnimatedActor
    extends AnimatedActor
 {
-   protected List<Point> path;
-   protected List<Point> visited;
+   //protected List<Point> path;
+   //protected List<Point> visited;
    
    public MobileAnimatedActor(String name, Point position, int rate,
       int animation_rate, List<PImage> imgs)
    {
       super(name, position, rate, animation_rate, imgs);
-      this.path = new ArrayList();
-      this.visited = new ArrayList();
+      //this.path = new ArrayList();
+      //this.visited = new ArrayList();
    }
 
-   public boolean dfs(Point start, Point end, WorldModel world, 
+ /*  public boolean dfs(Point start, Point end, WorldModel world, 
 		   List<Point> path, List<Point> visited) 
    {
 
 	   if(!(world.withinBounds(start)))
 	   {
 		   
-		   /*System.out.println(start.y);
+		   System.out.println(start.y);
 		   System.out.println("x from bound");
 		   System.out.println(start.x);
-		   System.out.println("not in bounds");*/
+		   System.out.println("not in bounds");
 		   return false;
 	   }
 	   if((start.y == end.y) && (start.x == end.x))
 	      {
 	    	 path.add(0, start);
-	    	// System.out.println("goal" + start.x +"," + start.y);
-	    	 //System.out.println("reached goal");
-	    	 //visited.add(0, start);
+	    	System.out.println("goal" + start.x +"," + start.y);
+	    	 System.out.println("reached goal");
+	    	 visited.add(0, start);
 	         return true;
 	      }
 	      if(!canPassThrough(world, start))
@@ -53,17 +53,17 @@ public abstract class MobileAnimatedActor
 	      {
 	    	  if(visited.get(i).x == start.x && visited.get(i).y == start.y)
 	    	  {
-	    		/*System.out.print(start.y);
+	    		System.out.print(start.y);
 	    	 	System.out.print(start.x);
-	    	 	System.out.println("visited");*/
+	    	 	System.out.println("visited");
 	    		return false;
 	    	  }
 	      }
 
 	      visited.add(start);
-	    /*  System.out.println(" after visited");
+	      System.out.println(" after visited");
 	      System.out.println(start.x);
-	      System.out.println(start.y);*/
+	      System.out.println(start.y);
 	     // System.out.println("visited:" + visited.size());
 	    
 	      boolean found = dfs(new Point((start.x)-1, (start.y)), end, world, path, visited) ||
@@ -78,14 +78,15 @@ public abstract class MobileAnimatedActor
 	    	 // System.out.println("found");
 	      }
 	      return found; 
-   }
+   }*/
       
 
    
-   protected Point nextPosition(WorldModel world, Point dest_pt, List<Point> path, List<Point> visited)
+   //protected Point nextPosition(WorldModel world, Point dest_pt, List<Point> path, List<Point> visited)
+   protected Point nextPosition(WorldModel world, Point dest_pt)
    {
-	  path.clear();
-	  visited.clear();
+	  //path.clear();
+	  //visited.clear();
 	  /* if(world.withinBounds(getPosition()))
 	   {
 		   System.out.println("inbounds");
@@ -102,7 +103,7 @@ public abstract class MobileAnimatedActor
 	   System.out.println("endpt" + dest_pt.x +"," +dest_pt.y);
 	   System.out.println("visited:" + visited.size());*/
 	  //System.out.println("startpt:" + getPosition().x +","+ getPosition().y);
-	   dfs(getPosition(), dest_pt, world, path, visited);
+	  /* dfs(getPosition(), dest_pt, world, path, visited);
 	   int i = path.size()-1;
 	   //System.out.println(i);
 	  System.out.println("pathsize:" + path.size());
@@ -111,19 +112,19 @@ public abstract class MobileAnimatedActor
 	  {
 		  return getPosition();
 	  }
-	  /*System.out.println(path.size());
+	  System.out.println(path.size());
 	  System.out.println("inlist" + path.get(i).x +","+ path.get(i).y);
 	  System.out.println("last:" + path.get(i).x +","+ path.get(i).y);
 	  System.out.println("last-1:" + path.get(i-1).x +","+ path.get(i-1).y);
 	  System.out.println("last-2:" + path.get(i-2).x +","+ path.get(i-2).y);
 	  System.out.println("last-3:" + path.get(i-3).x +","+ path.get(i-3).y);
-	  System.out.println("first" + path.get(0).x + "," + path.get(0).y);*/
+	  System.out.println("first" + path.get(0).x + "," + path.get(0).y);
 	  // Point new_pt = new Point(path.get(i-1).x, path.get(i-1).y);
 	   Point new_pt = new Point(path.get(i-1).x, path.get(i-1).y);
 	  // System.out.println("first step" +new_pt.x + "," + new_pt.y);
-	   return new_pt;
+	   return new_pt;*/
 	   
-	/*  int horiz = Integer.signum(dest_pt.x - getPosition().x);
+	  int horiz = Integer.signum(dest_pt.x - getPosition().x);
       Point new_pt = new Point(getPosition().x + horiz, getPosition().y);
 
       if (horiz == 0 || !canPassThrough(world, new_pt))
@@ -136,7 +137,7 @@ public abstract class MobileAnimatedActor
             new_pt = getPosition();
          }
       }
-      return new_pt;*/
+      return new_pt;
    }
 
    protected static boolean adjacent(Point p1, Point p2)

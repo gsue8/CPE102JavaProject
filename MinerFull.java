@@ -35,7 +35,8 @@ public class MinerFull
       }
       else
       {
-         world.moveEntity(this, nextPosition(world, smith.getPosition(), path, visited ));
+         //world.moveEntity(this, nextPosition(world, smith.getPosition(), path, visited ));
+    	  world.moveEntity(this, nextPosition(world, smith.getPosition()));
          return false;
       }
    }
